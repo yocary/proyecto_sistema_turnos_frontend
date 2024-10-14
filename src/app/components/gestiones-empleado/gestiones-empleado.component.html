@@ -1,0 +1,39 @@
+<div class="user-maintenance-container">
+  <div class="title-bar">
+    <h2>GESTIONES DEL EMPLEADO</h2>
+  </div>
+
+  <form (ngSubmit)="register()" [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Gestiones</mat-label>
+      <mat-select formControlName="gestion" required>
+        <mat-option *ngFor="let gestion of gestiones" [value]="gestion.valor">{{gestion.descripcion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha Inicio</mat-label>
+      <input
+        type="date"
+        matInput
+        formControlName="fechaInicio"
+      />
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Fecha Fin</mat-label>
+      <input
+        type="date"
+        matInput
+        formControlName="fechaFin"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Motivo Solicitud</mat-label>
+      <textarea matInput formControlName="motivoSolicitud" required></textarea>
+    </mat-form-field>
+    <div class="form-buttons">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button color="warn" type="button" (click)="regresar()">Regresar</button>
+    </div>
+  </form>
+</div>

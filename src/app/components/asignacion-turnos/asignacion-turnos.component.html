@@ -1,0 +1,41 @@
+<div class="asignacion-turnos-container">
+  <h2>ASIGNACIÓN DE TURNOS</h2>
+  <form (ngSubmit)="guardarAsignacion()" [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Fecha Inicio</mat-label>
+      <input
+        type="date"
+        matInput
+        formControlName="fechaInicio"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha Fin</mat-label>
+      <input
+        type="date"
+        matInput
+        formControlName="fechaFin"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Empleados</mat-label>
+      <mat-select formControlName="empleado" required>
+        <mat-option *ngFor="let emp of empleados" [value]="emp">{{emp.usuario}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Turno</mat-label>
+      <mat-select formControlName="turno" required>
+        <mat-option value="Turno Matutino">Turno Matutino</mat-option>
+        <mat-option value="Turno Vespertino">Turno Vespertino</mat-option>
+        <mat-option value="Turno Diurno">Turno Diurno</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="form-buttons">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button color="warn" type="button" (click)="regresar()">Regresar</button>
+    </div>
+  </form>
+</div>
