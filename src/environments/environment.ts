@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   seguridad: true,
-  api: "https://proyectosistematurnosbackend-production.up.railway.app", //ruta para conectar el backend
+  api: "https://proyectosistematurnosbackend-production-91de.up.railway.app", //ruta para conectar el backend
   //api: "http://localhost:8080"
 };
 
